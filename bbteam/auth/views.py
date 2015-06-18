@@ -19,10 +19,10 @@ def login():
         flash('Incorrect username or password.')
     return render_template("login.html", form=form)
 
-# @auth.route("/logout")
-# def logout():
-#     logout_user()
-#     return redirect(url_for('main.index'))
+@auth.route("/logout")
+def logout():
+    logout_user()
+    return redirect(url_for('main.index'))
 #
 #
 # @auth.route("/signup", methods=["GET", "POST"])

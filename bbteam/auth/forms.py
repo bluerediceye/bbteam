@@ -2,10 +2,11 @@ from flask_wtf import Form
 from wtforms.fields import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired, Length, Email, Regexp, EqualTo, ValidationError
 from bbteam.models import User
-from bbteam.main.views import MiniLoginForm
 
-class LoginForm(MiniLoginForm):
-    pass
+class SignUpForm(Form):
+    username = StringField('Your Username:', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    remember_me = BooleanField('Keep me logged in')
 
 class SignupForm(Form):
     username = StringField('Username',

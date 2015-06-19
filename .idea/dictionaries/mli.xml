@@ -2,11 +2,17 @@
   <dictionary name="mli">
     <words>
       <w>crossdomain</w>
+      <w>dropdown</w>
+      <w>dropup</w>
+      <w>getbootstrap</w>
       <w>googleapis</w>
+      <w>gravatar</w>
       <w>jumbotron</w>
       <w>linkhelp</w>
       <w>mlogin</w>
       <w>navbar</w>
+      <w>signin</w>
+      <w>signout</w>
       <w>sqlalchemy</w>
       <w>tbproxy</w>
       <w>userid</w>

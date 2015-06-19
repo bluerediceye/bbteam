@@ -1,3 +1,5 @@
+import hashlib
+import urllib
 from flask.ext.login import UserMixin
 from werkzeug.security import check_password_hash, generate_password_hash
 from bbteam import db
@@ -23,6 +25,15 @@ class User(db.Model, UserMixin):
     @staticmethod
     def get_by_username(username):
         return User.query.filter_by(username=username).first()
+
+    @staticmethod
+    def get_by_email(email):
+        return User.query.filter_by(email=email).first()
+
+    def avatar(self, size=50):
+        gravatar_url = "http://www.gravatar.com/avatar/" + hashlib.md5(self.email.lower()).hexdigest() + "?"
+        gravatar_url += urllib.urlencode({'s': str(size)})
+        return gravatar_url
 
     def __repr__(self):
         return "<User '{}'>".format(self.username)

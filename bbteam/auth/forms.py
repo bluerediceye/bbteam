@@ -3,12 +3,12 @@ from wtforms.fields import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired, Length, Email, Regexp, EqualTo, ValidationError
 from bbteam.models import User
 
-class SignUpForm(Form):
+class SignInForm(Form):
     username = StringField('Your Username:', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     remember_me = BooleanField('Keep me logged in')
 
-class SignupForm(Form):
+class SignUpForm(Form):
     username = StringField('Username',
                            validators=[
                                DataRequired(), Length(3, 80),
